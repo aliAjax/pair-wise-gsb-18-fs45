@@ -271,3 +271,453 @@ input {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- 术后冠部封闭与修复移交台 ---------- */
+
+select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: #172033;
+  background: #ffffff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hint {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.metric-hint {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.metric-card strong {
+  font-size: 30px;
+}
+
+/* 冲突条 */
+.conflict-banner {
+  border: 1px solid #fecdd3;
+  border-left: 6px solid #e11d48;
+  background: #fff1f2;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.conflict-banner p {
+  margin: 8px 0 12px;
+  color: #9f1239;
+}
+
+.conflict-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9f1239;
+}
+
+.link-button {
+  border: none;
+  min-height: auto;
+  padding: 0 6px;
+  background: transparent;
+  color: #9f1239;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.conflict-grid,
+.revision-old {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.conflict-grid dt,
+.revision-old dt {
+  color: #64748b;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.conflict-grid dd,
+.revision-old dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* 新牙位登记 */
+.new-handover-closed {
+  margin-bottom: 20px;
+}
+
+.new-handover-form {
+  margin-bottom: 20px;
+}
+
+/* 主工作区 */
+.handover-workspace {
+  grid-template-columns: 380px 1fr;
+  align-items: start;
+}
+
+.handover-list {
+  display: grid;
+  gap: 10px;
+  max-height: 720px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.handover-card {
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.handover-card.selected {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 30%, #ffffff);
+}
+
+.handover-card.status-consult {
+  border-left: 5px solid var(--warn);
+}
+
+.handover-card.status-confirmed {
+  border-left: 5px solid var(--accent);
+}
+
+.handover-card.status-pending {
+  border-left: 5px solid var(--primary);
+}
+
+.handover-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.tooth-no {
+  font-size: 18px;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+}
+
+.badge-pending {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, #ffffff);
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+}
+
+.badge-consult {
+  color: var(--warn);
+  background: color-mix(in srgb, var(--warn) 10%, #ffffff);
+  border-color: color-mix(in srgb, var(--warn) 32%, var(--border));
+}
+
+.badge-confirmed {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, #ffffff);
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--border));
+}
+
+.handover-diagnosis {
+  color: #526070;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.handover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: #526070;
+}
+
+.handover-meta span {
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.handover-meta .flag {
+  color: #9f1239;
+  background: #ffe4e6;
+  font-weight: 700;
+}
+
+.revision-count {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+/* 详情台 */
+.empty-detail {
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+}
+
+.detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 14px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.detail-head h2 {
+  margin-bottom: 6px;
+}
+
+.inline-notice {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 14px;
+}
+
+.inline-error {
+  color: #9f1239;
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+
+/* 椅位控制 */
+.slot-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.slot-current {
+  display: grid;
+  gap: 2px;
+  margin-right: auto;
+}
+
+.slot-current span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.slot-booking {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.slot-booking select {
+  min-height: 38px;
+  width: auto;
+}
+
+/* 判定提示 */
+.rule-block {
+  border: 1px solid #fecdd3;
+  border-left: 5px solid #e11d48;
+  background: #fff1f2;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 14px 0;
+  color: #9f1239;
+}
+
+.rule-block ul {
+  margin: 8px 0;
+  padding-left: 18px;
+}
+
+.rule-ok {
+  border: 1px solid #a7f3d0;
+  border-left: 5px solid #059669;
+  background: #ecfdf5;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 14px 0;
+  color: #065f46;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.warn-action {
+  background: color-mix(in srgb, var(--warn) 12%, #ffffff);
+  border-color: color-mix(in srgb, var(--warn) 40%, var(--border));
+  color: var(--warn);
+}
+
+/* 冻结与修订链 */
+.frozen-box {
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  background: color-mix(in srgb, var(--accent) 6%, #ffffff);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.frozen-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+
+.revisions {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.revision-chain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.revision-chain li {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fbfdff;
+}
+
+.revision-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.revision-reason {
+  margin-bottom: 10px;
+  color: #526070;
+}
+
+/* 椅位板 */
+.chair-board {
+  margin-bottom: 20px;
+}
+
+.slot-list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.slot-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  background: #fbfdff;
+}
+
+.slot-card.free {
+  border-style: dashed;
+  background: #f8fafc;
+}
+
+.slot-card.mine {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 25%, #ffffff);
+}
+
+.slot-label {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.slot-tooth {
+  display: grid;
+  gap: 2px;
+}
+
+.slot-tooth span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.slot-tooth .muted {
+  color: #94a3b8;
+}
+
+/* 规则速览 */
+.rules-note {
+  margin-bottom: 0;
+}
+
+.rules-note ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #526070;
+  display: grid;
+  gap: 6px;
+}
+
+@media (max-width: 980px) {
+  .slot-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .handover-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .conflict-grid,
+  .revision-old {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .slot-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
